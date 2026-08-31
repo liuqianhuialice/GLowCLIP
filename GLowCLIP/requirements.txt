@@ -1,0 +1,9 @@
+# On an RTX 50-series GPU, install the CUDA 12.8 torch wheel first; see README.md.
+numpy>=1.26,<3
+Pillow>=10,<13
+PyYAML>=6,<7
+tensorboard>=2.16,<3
+torch>=2.7,<3
+tqdm>=4.66,<5
+transformers>=4.50,<6
+

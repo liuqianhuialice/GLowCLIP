@@ -1,0 +1,19 @@
+{
+  "average_precision": 0.9939628449736155,
+  "brier_score": 0.028810117425243233,
+  "ece_10_bin": 0.013937768921494561,
+  "f1": 0.9625996321275291,
+  "log_loss": 0.10544654276060432,
+  "matched_pairs": {
+    "ai_score_higher_count": 1623,
+    "ai_score_higher_fraction": 0.9932680538555692,
+    "count": 1634,
+    "mean_ai_minus_real_score": 0.9045920627495846,
+    "median_ai_minus_real_score": 0.9918681071139872
+  },
+  "mean_score": {
+    "ai": 0.9497757998611174,
+    "real": 0.0451837371115328
+  },
+  "precision": 0.9643734643734644
+}

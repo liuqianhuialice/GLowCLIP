@@ -1,0 +1,6 @@
+# Informational only: these optional baseline dependencies were NOT installed
+# or executed during the baselines_original.ipynb repository adaptation.
+# Install them yourself only when you intend to reproduce the baselines.
+torchvision
+open_clip_torch
+

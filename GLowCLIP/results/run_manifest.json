@@ -1,0 +1,36 @@
+{
+  "checkpoint": {
+    "epoch": 5,
+    "filename": "final_handoff_checkpoint_glow_dataset.pt",
+    "selection_metric": "validation family-level macro ROC-AUC",
+    "sha256": "28f28d7c65a6a96e546fa46e899b3766dd4c058e0302a8a8a49bf24f8f121271",
+    "size_bytes": 13123697,
+    "threshold": 0.4474602937698364
+  },
+  "data": {
+    "dataset": "glow_dataset",
+    "test_images": 3268,
+    "test_pairs": 1634,
+    "train_images": 26162,
+    "train_pairs": 13081,
+    "validation_images": 3272,
+    "validation_pairs": 1636
+  },
+  "environment": {
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "python": "3.12.14",
+    "torch": "2.7.1+cu128",
+    "transformers": "5.16.1"
+  },
+  "policy": {
+    "checkpoint_selected_on": "validation only",
+    "pretrained_backbone_downloaded_during_run": false,
+    "resume_checkpoint_used": false,
+    "test_threshold_refit": false
+  },
+  "run_date_utc": "2026-08-31",
+  "seed": 42
+}

@@ -1,0 +1,36 @@
+{
+  "method": {
+    "confidence_level": 0.95,
+    "replicates": 2000,
+    "resampling_unit": "dataset_pair_id",
+    "seed": 20260831,
+    "type": "percentile"
+  },
+  "test": {
+    "accuracy": {
+      "estimate": 0.9626682986536108,
+      "lower": 0.9556303549571603,
+      "upper": 0.969094247246022
+    },
+    "family_level_macro_roc_auc": {
+      "estimate": 0.9928982531636029,
+      "lower": 0.9907954357280219,
+      "upper": 0.9948056833277471
+    },
+    "roc_auc": {
+      "estimate": 0.9934390304559326,
+      "lower": 0.9915032448100268,
+      "upper": 0.9952164286602476
+    },
+    "sensitivity": {
+      "estimate": 0.9608323133414932,
+      "lower": 0.9510250917992656,
+      "upper": 0.9700122399020807
+    },
+    "specificity": {
+      "estimate": 0.9645042839657283,
+      "lower": 0.9553243574051408,
+      "upper": 0.9730722154222766
+    }
+  }
+}
