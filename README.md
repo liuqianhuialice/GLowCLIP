@@ -1,20 +1,3 @@
----
-title: GLowCLIP
-emoji: 🔎
-colorFrom: indigo
-colorTo: purple
-sdk: gradio
-sdk_version: 6.26.0
-python_version: "3.12"
-app_file: app.py
-pinned: false
-suggested_hardware: zero-a10g
-fullWidth: true
-short_description: Robust real-vs-AI detection with degradations
-preload_from_hub:
-  - openai/clip-vit-base-patch16
----
-
 <p align="center">
   <img src="assets/glowclip-banner.svg" width="100%" alt="GLowCLIP — Global–Local Weighted Feature Fusion for Robust AI-Generated Image Detection">
 </p>
