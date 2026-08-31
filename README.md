@@ -51,6 +51,40 @@ The name describes the model directly: **G**lobal + **Lo**cal + **W**eighted +
 | Real-world inference | Recursive, unlabeled, unpaired folder inference supports JPEG, PNG, WebP, BMP, and TIFF. |
 | Reproducible evaluation | Fixed-threshold held-out testing, subgroup metrics, pair-bootstrap confidence intervals, and machine-readable results are included. |
 
+## Results at a glance
+
+The selected epoch-5 checkpoint was fine-tuned with fresh LoRA adapters and heads
+on `glow_dataset`. The public pretrained CLIP backbone was loaded from
+cache; it was not retrained from random initialization. Training used random seed
+42 on a single NVIDIA GeForce RTX 5090 with 32 GB of GPU memory.
+
+### Held-out modified-image test split
+
+The main test split contains the dataset's assigned degradation levels rather than
+the optional clean-image tree: 3,268 images / 1,634 matched pairs, with the
+validation-selected threshold frozen before test evaluation.
+
+| Model | Accuracy | AUROC | AP | F1-score |
+|---|---:|---:|---:|---:|
+| **GLowCLIP (ours)** | **96.27%** | **0.9934** | **0.9940** | **96.26%** |
+| ResNet+LP | 87.34% | 0.9561 | 0.9555 | 88.09% |
+| CLIP+LP | 89.60% | 0.9614 | 0.9632 | 89.59% |
+| NPR(CVPR 2024) | 78.82% | 0.8836 | 0.8850 | 80.61% |
+| VIB(CVPR 2025) | 90.59% | 0.9693 | 0.9703 | 90.76% |
+
+GLowCLIP additionally achieved **0.9929** transform-family × level macro
+ROC-AUC and **96.08%** AIGC recall.
+
+Against the strongest reported baseline in the table, VIB, GLowCLIP improves
+accuracy by **5.68 percentage points**, AUROC by **0.0241**, AP by **0.0237**, and
+F1-score by **5.50 percentage points**. Compared with the CLIP linear-probe
+baseline, it improves both accuracy and F1-score by **6.67 percentage points** and
+AUROC by **0.0320**. These gains show the value of learning global–local fusion and
+degradation consistency beyond using a frozen CLIP representation alone.
+
+See the [full training report](docs/TRAINING_REPORT.md) for confidence intervals,
+subgroup results, and limitations.
+
 ## Dataset construction
 
 `glow_dataset` was built by consolidating three complementary source datasets into
@@ -120,40 +154,6 @@ multi-source and multi-generator coverage, integrity verification, duplicate
 auditing, and degradation-aware evaluation in one reproducible benchmark. This
 design specifically reduces dataset shortcuts and makes the benchmark better
 aligned with difficult real-world detection.
-
-## Results at a glance
-
-The selected epoch-5 checkpoint was fine-tuned with fresh LoRA adapters and heads
-on `glow_dataset`. The public pretrained CLIP backbone was loaded from
-cache; it was not retrained from random initialization. Training used random seed
-42 on a single NVIDIA GeForce RTX 5090 with 32 GB of GPU memory.
-
-### Held-out modified-image test split
-
-The main test split contains the dataset's assigned degradation levels rather than
-the optional clean-image tree: 3,268 images / 1,634 matched pairs, with the
-validation-selected threshold frozen before test evaluation.
-
-| Model | Accuracy | AUROC | AP | F1-score |
-|---|---:|---:|---:|---:|
-| **GLowCLIP (ours)** | **96.27%** | **0.9934** | **0.9940** | **96.26%** |
-| ResNet+LP | 87.34% | 0.9561 | 0.9555 | 88.09% |
-| CLIP+LP | 89.60% | 0.9614 | 0.9632 | 89.59% |
-| NPR(CVPR 2024) | 78.82% | 0.8836 | 0.8850 | 80.61% |
-| VIB(CVPR 2025) | 90.59% | 0.9693 | 0.9703 | 90.76% |
-
-GLowCLIP additionally achieved **0.9929** transform-family × level macro
-ROC-AUC and **96.08%** AIGC recall.
-
-Against the strongest reported baseline in the table, VIB, GLowCLIP improves
-accuracy by **5.68 percentage points**, AUROC by **0.0241**, AP by **0.0237**, and
-F1-score by **5.50 percentage points**. Compared with the CLIP linear-probe
-baseline, it improves both accuracy and F1-score by **6.67 percentage points** and
-AUROC by **0.0320**. These gains show the value of learning global–local fusion and
-degradation consistency beyond using a frozen CLIP representation alone.
-
-See the [full training report](docs/TRAINING_REPORT.md) for confidence intervals,
-subgroup results, and limitations.
 
 ## How it works
 
