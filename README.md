@@ -9,6 +9,11 @@
 </p>
 
 <p align="center">
+  <strong>This project is for TikTok TechJam 2026.</strong><br>
+  <img alt="TikTok TechJam 2026" src="https://img.shields.io/badge/TikTok_TechJam-2026-000000?logo=tiktok&logoColor=white">
+</p>
+
+<p align="center">
   <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.7%2B-EE4C2C?logo=pytorch&logoColor=white">
   <img alt="Backbone" src="https://img.shields.io/badge/Backbone-CLIP_ViT--B%2F16-8B5CF6">
