@@ -457,9 +457,6 @@ glowclip-baseline-reproduction \
   --output-dir outputs/baselines
 ```
 
-See the [baseline adaptation notes](docs/BASELINES_ADAPTATION.md) for implementation
-details.
-
 ## Development
 
 Install development dependencies and run the complete local check:
@@ -471,15 +468,6 @@ make check
 
 The unit tests use a tiny dummy vision backbone. They do not download CLIP weights
 or require a dataset.
-
-## Documentation
-
-| Document | Contents |
-|---|---|
-| [Method guide](docs/GLOWCLIP_Method_Guide.md) | Architecture, fusion mechanism, LoRA placement, degradation-aware loss, and implementation notes |
-| [Model card](MODEL_CARD.md) | Intended use, training data summary, evaluation, limitations, and checkpoint identity |
-| [Complete handoff report](docs/COMPLETE_HANDOFF_REPORT.md) | Consolidated data, training, testing, robustness, and delivery record |
-| [Training report](docs/TRAINING_REPORT.md) | Main experiment, confidence intervals, subgroup analysis, and robustness results |
 
 ## Responsible use and limitations
 
